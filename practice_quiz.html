@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Olympiad 2026 - Remote Sensing Practice Quiz</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --card: #16213e;
+    --accent: #0f3460;
+    --highlight: #e94560;
+    --text: #eee;
+    --muted: #aaa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    color: var(--highlight);
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .section-header {
+    background: var(--accent);
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    margin: 2.5rem auto 1.2rem;
+    max-width: 900px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-left: 4px solid var(--highlight);
+  }
+  .image-group {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #2a2a4a;
+  }
+  .image-group h3 {
+    color: var(--highlight);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+  }
+  .image-group img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .question {
+    margin: 0.8rem 0;
+    padding: 0.6rem 0;
+    border-top: 1px solid #2a2a4a;
+  }
+  .question:first-of-type { border-top: none; }
+  .question p.prompt {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .question span.tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+  .tag-physics { background: #7b2d8b; }
+  .tag-image   { background: #1b6b3a; }
+  .tag-climate { background: #8b5e1b; }
+  .tag-energy  { background: #1b4b8b; }
+  details {
+    margin-top: 0.4rem;
+    background: #0d1b36;
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+  }
+  details summary {
+    cursor: pointer;
+    color: var(--highlight);
+    font-weight: 600;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  details summary:hover { text-decoration: underline; }
+  details .answer {
+    margin-top: 0.5rem;
+    color: #ccc;
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+  details .answer strong { color: #fff; }
+  .qnum {
+    color: var(--highlight);
+    font-weight: 700;
+    margin-right: 0.3rem;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 3rem;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Remote Sensing Practice Quiz</h1>
+<p class="subtitle">Science Olympiad Division C 2026 &mdash; Climate Change Theme<br>
+4 Sections: Physics (25%) | Image Interpretation (35%) | Climate Processes (20%) | Energy Balance (20%)</p>
+
+<!-- ============================================================ -->
+<!--  SECTION 3d: IMAGE INTERPRETATION (35%)                      -->
+<!-- ============================================================ -->
+<div class="section-header">Section 3d &mdash; Image Interpretation (35%)</div>
+
+<!-- IMAGE 01 -->
+<div class="image-group">
+<h3>Image 01 &mdash; MODIS Aqua True Color Composite</h3>
+<img src="output/01_modis_aqua_truecolor.png" alt="MODIS Aqua True Color Composite, Gulf of Mexico, Aug 2025">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q1.</span><span class="tag tag-image">Image Interp</span> What satellite and sensor produced this image? Identify the specific bands used and explain why these bands create a "true color" composite.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Satellite: Aqua; Sensor: MODIS (Moderate Resolution Imaging Spectroradiometer).</strong> The image title and annotation confirm this. The bands used are <strong>B1 (Red), B4 (Green), and B3 (Blue)</strong>, as shown in the bottom annotation. These three bands correspond to the red, green, and blue portions of the visible electromagnetic spectrum, which is exactly what the human eye perceives. When you assign each to its respective color channel in an RGB display, the result approximates natural color &mdash; hence "true color composite." Clouds appear white because they reflect strongly across all visible wavelengths; vegetation appears green because chlorophyll reflects green light; and deep ocean appears dark blue because water absorbs red and green light while scattering/reflecting blue.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q2.</span><span class="tag tag-image">Image Interp</span> What is the spatial resolution of this image? How does this compare to Landsat or Sentinel-2, and what trade-off does MODIS make?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The annotation states <strong>500m resolution</strong>. For comparison, Landsat 8/9 offers 30m and Sentinel-2 offers 10&ndash;20m resolution. MODIS trades spatial resolution for <strong>temporal coverage and swath width</strong>: MODIS scans a 2,330 km swath and images the entire Earth every 1&ndash;2 days, whereas Landsat revisits the same spot only every 16 days. This makes MODIS ideal for monitoring large-scale, rapidly changing phenomena (weather systems, wildfire smoke, ocean color) rather than fine-scale features. You can see this trade-off in the image: individual buildings or farm fields are invisible, but the broad cloud patterns, sediment plumes, and coastline are clearly resolved.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q3.</span><span class="tag tag-image">Image Interp</span> Identify the major geographic features visible in this image. What causes the bright white patches, and what causes the turquoise/cyan coloring visible near some coastlines?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The image covers the <strong>Gulf of Mexico</strong> region (Aug 2025). Key features: the U.S. Gulf Coast (Texas through Florida) along the top, the <strong>Yucatan Peninsula</strong> (Mexico) at lower left, and <strong>Cuba</strong> at lower right. The bright white patches are <strong>clouds and cloud systems</strong> &mdash; common in August due to tropical convection and the hurricane season. Clouds reflect strongly across all visible bands, appearing white. The <strong>turquoise/cyan areas</strong> near coastlines (especially visible around the Bahamas/Cuba and Yucatan) are caused by <strong>shallow water over light-colored sandy or coral seafloors</strong>. In shallow water, sunlight penetrates to the bottom, reflects off the sand/coral, and returns through the water column, giving a bright cyan appearance. The deeper Gulf waters appear dark blue-black because light is absorbed before reaching the bottom.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q4.</span><span class="tag tag-physics">Physics</span> Why is the Aqua satellite particularly well-suited for observing the Gulf of Mexico in this image? What orbit does Aqua use, and what time of day does it cross the equator?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Aqua is in a <strong>sun-synchronous polar orbit</strong> at approximately 705 km altitude. It crosses the equator at about <strong>1:30 PM local time</strong> (ascending node), which provides consistent afternoon illumination for visible-light imaging. This is complementary to its sister satellite Terra, which crosses at ~10:30 AM. For the Gulf of Mexico in August, the afternoon pass means the sun is high, providing strong illumination, though it also means afternoon convective clouds (which are clearly abundant in this image) are well-developed. Aqua carries six instruments, and its name reflects its focus on Earth's water cycle &mdash; making observations of ocean, precipitation, and water vapor a primary mission objective. The MODIS sensor on Aqua has 36 spectral bands spanning visible through thermal IR, enabling far more analysis than just this true-color view.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 02 -->
+<div class="image-group">
+<h3>Image 02 &mdash; Sea Surface Temperature, Pacific Ocean</h3>
+<img src="output/02_sst.png" alt="Sea Surface Temperature, Pacific Ocean, July 2025">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q5.</span><span class="tag tag-image">Image Interp</span> Describe the overall SST pattern shown in this image. Where are the warmest and coolest waters, and what values do they reach?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The color bar ranges from <strong>0 to ~32&deg;C</strong>. The warmest waters (deep red, ~28&ndash;30&deg;C) form the <strong>Western Pacific Warm Pool</strong>, located in the tropical western Pacific near Indonesia and the Philippines. The coolest waters (blue-cyan, ~0&ndash;5&deg;C) appear at the highest latitudes visible (toward the poles). A key feature is the <strong>equatorial cold tongue</strong> &mdash; a strip of cooler green-yellow water (~20&ndash;24&deg;C) extending westward along the equator from the South American coast. This pattern is driven by trade winds pushing surface water westward, causing cold, deep water to upwell along the eastern equatorial Pacific. The strong east-west temperature gradient along the equator is a hallmark of the Pacific and plays a central role in ENSO dynamics.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q6.</span><span class="tag tag-climate">Climate</span> The annotation mentions a "La Ni&ntilde;a pattern." What specific features in this SST map indicate La Ni&ntilde;a conditions rather than El Ni&ntilde;o?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    La Ni&ntilde;a is characterized by <strong>cooler-than-normal SSTs in the central and eastern equatorial Pacific</strong>. In this July 2025 map, the cold tongue is prominent and extends well westward across the equatorial Pacific &mdash; the green/yellow band along the equator is clearly visible and relatively broad. During El Ni&ntilde;o, the trade winds weaken, upwelling decreases, and the cold tongue shrinks or disappears &mdash; the warm pool spreads eastward and the entire equatorial Pacific warms. Here, the <strong>sharp contrast between the warm western Pacific (red) and the cool eastern equatorial Pacific (green-yellow)</strong> indicates that the Walker circulation and trade winds are strong, actively maintaining upwelling. The Ni&ntilde;o 3.4 region (5&deg;N&ndash;5&deg;S, 170&deg;W&ndash;120&deg;W) would show SST anomalies below &minus;0.5&deg;C during La Ni&ntilde;a.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q7.</span><span class="tag tag-image">Image Interp</span> What dataset produced this image, and what is its spatial resolution? Why is 0.25&deg; resolution appropriate for SST mapping but not for, say, urban land-use mapping?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The dataset is <strong>NOAA OISST V2.1</strong> (Optimum Interpolation Sea Surface Temperature) at <strong>0.25&deg; resolution</strong>, which corresponds to roughly 28 km at the equator. This resolution is well-suited for SST because ocean temperature varies gradually over tens to hundreds of kilometers &mdash; major features like the warm pool, cold tongue, and boundary currents operate at scales of hundreds to thousands of km. Fine-scale SST features (eddies, fronts) exist but the dominant climate-relevant patterns are captured at 0.25&deg;. Urban land-use mapping requires resolutions of 1&ndash;30 meters because features of interest (buildings, roads, parks) are measured in meters, not kilometers. OISST is also an <strong>interpolated product</strong> combining satellite IR, microwave, ship, and buoy data &mdash; it sacrifices fine spatial detail to produce a gap-free, globally complete daily field.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q8.</span><span class="tag tag-physics">Physics</span> SST is measured by satellites using thermal infrared radiation emitted by the ocean surface. Using Wien's Displacement Law, estimate the peak emission wavelength for ocean water at 25&deg;C. What part of the EM spectrum is this?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Wien's Displacement Law: &lambda;<sub>max</sub> = b / T</strong>, where b = 2,898 &mu;m&middot;K and T is in Kelvin. For 25&deg;C = 298 K: &lambda;<sub>max</sub> = 2898 / 298 &asymp; <strong>9.7 &mu;m</strong>. This falls in the <strong>thermal infrared (TIR)</strong> portion of the EM spectrum, specifically the "atmospheric window" region (8&ndash;13 &mu;m) where the atmosphere is relatively transparent to IR radiation. This is why SST-measuring instruments like MODIS (bands 31 and 32 at ~11 and ~12 &mu;m) and AVHRR use channels in this window. Cloud cover blocks TIR, which is why OISST also incorporates microwave data (which penetrates clouds but at coarser resolution) to fill gaps.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 03 -->
+<div class="image-group">
+<h3>Image 03 &mdash; MODIS Aerosol Optical Depth</h3>
+<img src="output/03_modis_aerosol_depth.png" alt="MODIS Aerosol Optical Depth, Global, Summer 2025">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q9.</span><span class="tag tag-image">Image Interp</span> What does Aerosol Optical Depth (AOD) measure? What AOD values appear in the color bar, and what do higher values indicate about atmospheric conditions?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Aerosol Optical Depth (AOD)</strong> is a dimensionless measure of how much aerosol particles in a vertical column of atmosphere <strong>attenuate (scatter and absorb) incoming sunlight</strong>. The color bar ranges from <strong>0 to ~0.8</strong>. An AOD of 0 means a perfectly clean atmosphere; higher values mean more aerosols blocking light. An AOD of 1.0 means roughly 37% (1/e) of direct sunlight at that wavelength is attenuated. Values below ~0.1 (dark/black areas on this map) indicate clean air; values of 0.3&ndash;0.5 indicate moderate haze; values above 0.5&ndash;0.8 (bright purple/white on this map) indicate heavy aerosol loading from sources like dust storms, biomass burning, or industrial pollution. AOD is measured by MODIS using the <strong>Dark Target</strong> and <strong>Deep Blue</strong> algorithms, which compare reflected radiance to models of surface and atmospheric scattering.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q10.</span><span class="tag tag-image">Image Interp</span> Identify the three major high-AOD regions visible on this map. For each, explain the primary aerosol source.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>1. Saharan Africa and the tropical Atlantic:</strong> A large plume of high AOD (bright purple/white) extends from the Sahara Desert westward across the Atlantic Ocean. This is <strong>Saharan mineral dust</strong>, lofted by strong surface winds and carried westward by the African Easterly Jet. This is strongest in Northern Hemisphere summer. <strong>2. Sub-Saharan Africa / Amazon:</strong> High AOD in central/southern Africa and parts of South America from <strong>biomass burning</strong> &mdash; agricultural fires and deforestation burning that peaks in the dry season. <strong>3. South and East Asia:</strong> High AOD across India, China, and Southeast Asia from a combination of <strong>industrial pollution, vehicle emissions, and agricultural burning</strong>. These anthropogenic aerosols include sulfates, nitrates, black carbon, and organic carbon. Note the annotation confirms these sources: "Saharan dust over Atlantic, biomass burning in Africa/Amazon, Asian haze."
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q11.</span><span class="tag tag-climate">Climate</span> How do aerosols affect Earth's energy balance? Distinguish between the direct and indirect effects of aerosols on climate.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Direct effect:</strong> Aerosols scatter and absorb incoming solar radiation. Scattering aerosols (sulfates, sea salt) reflect sunlight back to space, producing a <strong>cooling effect</strong> (negative radiative forcing). Absorbing aerosols (black carbon/soot) warm the atmosphere locally. The net direct effect of aerosols is estimated at approximately <strong>&minus;0.3 W/m&sup2;</strong>, a cooling influence. <strong>Indirect effect:</strong> Aerosols act as <strong>cloud condensation nuclei (CCN)</strong>. More aerosols mean more, smaller cloud droplets, which increases cloud reflectivity (the <strong>Twomey/first indirect effect</strong>) and can extend cloud lifetime by suppressing precipitation (the <strong>Albrecht/second indirect effect</strong>). Both indirect effects are cooling. This map illustrates why aerosol forcing remains one of the <strong>largest uncertainties in climate models</strong> &mdash; the spatial distribution is highly uneven, the sources are varied, and the indirect cloud effects are complex and difficult to quantify from observations alone.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q12.</span><span class="tag tag-physics">Physics</span> This dataset (MOD08_M3) uses a 1&deg; grid. Convert 1&deg; to approximate kilometers at the equator. Why are there white/blank areas over some land regions (e.g., bright deserts)?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    One degree of latitude &asymp; 111 km, so a 1&deg; grid has cells of roughly <strong>111 km &times; 111 km at the equator</strong> (narrowing at higher latitudes as meridians converge). This coarse grid is appropriate for a monthly global average product tracking regional-to-continental aerosol patterns. The <strong>blank/missing areas</strong> over bright deserts (Sahara interior, Arabian Peninsula, parts of Antarctica) occur because the standard <strong>Dark Target aerosol retrieval algorithm</strong> requires a dark surface to separate surface reflectance from atmospheric aerosol scattering. Over bright surfaces, the surface signal overwhelms the aerosol signal. NASA developed the <strong>Deep Blue algorithm</strong> specifically to retrieve AOD over bright desert surfaces (using blue wavelengths where deserts are darker), but coverage gaps can remain in monthly composites where both algorithms have insufficient cloud-free retrievals.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 04 -->
+<div class="image-group">
+<h3>Image 04 &mdash; GOES-16 Geostationary Cloud Imagery</h3>
+<img src="output/04_goes16_clouds.png" alt="GOES-16 Visible and IR Cloud Imagery, Sep 1 2024">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q13.</span><span class="tag tag-image">Image Interp</span> This image shows two views from GOES-16. What band and wavelength does each panel use? Explain what physical property each band measures.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Left panel: Band 2 (0.64 &mu;m)</strong> &mdash; a visible (red) wavelength channel that measures <strong>reflected sunlight</strong>. Bright features have high albedo (clouds, snow, bright land); dark features absorb sunlight (oceans, vegetated land). This is "daytime cloud imagery" because it requires solar illumination. <strong>Right panel: Band 13 (10.3 &mu;m)</strong> &mdash; a thermal infrared "window" channel that measures <strong>emitted brightness temperature</strong>. Warm surfaces (land, ocean) appear red/orange (~290&ndash;310 K), while cold features (high cloud tops) appear blue/white (~200&ndash;230 K). The IR channel works day and night because it detects thermal emission, not reflected sunlight. Together, these two channels let meteorologists distinguish cloud types: thick clouds are bright in visible AND cold in IR (high tops), while thin cirrus may be nearly invisible in visible but cold in IR.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q14.</span><span class="tag tag-physics">Physics</span> GOES-16 orbits at geostationary altitude. What altitude is this, what is its orbital period, and why is geostationary orbit essential for weather monitoring?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Geostationary orbit is at approximately <strong>35,786 km</strong> above the equator. The orbital period is exactly <strong>24 hours (one sidereal day)</strong>, matching Earth's rotation so the satellite remains fixed over one longitude. For GOES-16 (GOES-East), this is approximately 75.2&deg;W, providing continuous coverage of the Americas. Geostationary orbit is essential for weather monitoring because it enables <strong>continuous, high-temporal-resolution imaging</strong> of the same region &mdash; GOES-16's ABI (Advanced Baseline Imager) produces full-disk images every 10 minutes and mesoscale images every 60 seconds. This temporal cadence is critical for tracking rapidly evolving weather like thunderstorms, hurricanes, and frontal systems. The trade-off is <strong>coarser spatial resolution</strong> compared to LEO satellites (0.5&ndash;2 km for GOES vs. 10&ndash;30 m for Landsat) due to the much greater distance.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q15.</span><span class="tag tag-image">Image Interp</span> In the IR panel (right), identify areas of deep convection. How can you tell these clouds are tall, and approximately what temperature do their tops reach?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Deep convection appears as <strong>bright blue and white patches</strong> in the IR panel, concentrated in the tropical regions (near the ITCZ and over tropical landmasses). These colors correspond to very cold brightness temperatures, approximately <strong>200&ndash;220 K (&minus;73 to &minus;53&deg;C)</strong>. You can determine these clouds are tall because temperature decreases with altitude in the troposphere (the <strong>lapse rate</strong>, ~6.5&deg;C/km). Extremely cold cloud-top temperatures mean the tops have reached the upper troposphere or even the tropopause, at altitudes of <strong>12&ndash;16 km</strong> in the tropics. The annotation confirms: "Cold (white) = high cloud tops = deep convection." Compare these to the warm red/orange areas (~290&ndash;310 K) which are cloud-free land/ocean surfaces radiating at near-surface temperatures. Mid-level clouds would appear at intermediate colors (yellow-green).
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q16.</span><span class="tag tag-image">Image Interp</span> Why does the left (visible) panel show a curved terminator with darkness on the left side, while the right (IR) panel shows the full disk illuminated?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The visible channel (Band 2) detects <strong>reflected sunlight</strong>, so it can only image the sunlit portion of Earth. The dark area on the left of the visible panel is the <strong>nightside of Earth</strong> where no solar illumination reaches &mdash; the curved boundary is the <strong>day-night terminator</strong>. At ~17:00 UTC on September 1, the terminator would be positioned in the late afternoon across the eastern Americas. The IR channel (Band 13) detects <strong>thermal emission from Earth's surface and atmosphere</strong>, which is produced continuously regardless of sunlight. Every surface above absolute zero emits thermal IR radiation, so the IR panel provides <strong>complete coverage of the full disk</strong> at all times, day and night. This is a fundamental advantage of thermal IR for weather monitoring &mdash; 24/7 coverage without gaps.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 05 -->
+<div class="image-group">
+<h3>Image 05 &mdash; GPM IMERG Global Precipitation</h3>
+<img src="output/05_gpm_precipitation.png" alt="GPM IMERG Mean Precipitation and Seasonal Difference, 2025">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q17.</span><span class="tag tag-image">Image Interp</span> Describe the prominent band of heavy precipitation visible in the top panel (annual mean). What is this feature called, and what atmospheric mechanism creates it?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The prominent east-west band of deep blue (high precipitation) near the equator is the <strong>Intertropical Convergence Zone (ITCZ)</strong>. It is created by the convergence of the <strong>northeast and southeast trade winds</strong> near the equator. Where these winds meet, moist tropical air is forced to rise (convective uplift), cools adiabatically, and produces persistent heavy rainfall. The ITCZ is visible over both the Pacific and Atlantic oceans as a nearly continuous rain band. Over land, it manifests as the monsoon regions (e.g., the Amazon basin, central Africa, and the Maritime Continent/Indonesia show intense blue). The ITCZ is part of the <strong>Hadley cell circulation</strong> &mdash; air rises at the ITCZ, flows poleward aloft, descends at ~30&deg;N/S (creating subtropical deserts), and returns as trade winds.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q18.</span><span class="tag tag-climate">Climate</span> The bottom panel shows July minus January precipitation. Explain the blue and brown patterns in terms of the seasonal migration of the ITCZ.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Blue = wetter in July; Brown = wetter in January.</strong> The ITCZ follows the <strong>solar zenith</strong>, migrating northward during Northern Hemisphere summer (July) and southward during Southern Hemisphere summer (January). In the bottom panel: <strong>Blue regions</strong> (Northern Hemisphere tropics &mdash; Sahel, India, Southeast Asia, Central America) receive much more rain in July when the ITCZ and monsoon systems shift northward. <strong>Brown regions</strong> (Southern Hemisphere tropics &mdash; Amazon, southern Africa, northern Australia) receive more rain in January when the ITCZ shifts southward. This seasonal asymmetry is stronger over land due to the greater thermal contrast between land and ocean (land heats faster, driving stronger monsoon circulations). The pattern directly visualizes the <strong>annual migration of the global precipitation belt</strong> and demonstrates why tropical regions have distinct wet and dry seasons.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q19.</span><span class="tag tag-physics">Physics</span> GPM (Global Precipitation Measurement) uses both radar and passive microwave sensors. Why are microwave frequencies used to detect precipitation, and what advantage does radar have over passive microwave?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Microwave frequencies (10&ndash;183 GHz)</strong> interact directly with hydrometeors (rain drops, ice particles). Lower frequencies (&lt;37 GHz) are <strong>emitted</strong> by rain drops &mdash; the warm rain emission stands out against the cold ocean background. Higher frequencies (&gt;85 GHz) are <strong>scattered</strong> by ice particles in cloud tops, creating a cold signature against the warmer background. This allows passive microwave sensors to estimate rainfall rates. <strong>Radar (GPM's DPR at 13.6 and 35.5 GHz)</strong> has the advantage of providing <strong>vertical profiles</strong> of precipitation &mdash; it sends pulses and measures the returned signal at each range gate, revealing the 3D structure of storms (where rain, snow, and ice exist at different altitudes). Radar also provides more direct, quantitative measurements of raindrop size via dual-frequency technique. The trade-off: radar has a narrower swath (~245 km) vs. passive microwave radiometers (~900+ km swath), so the constellation approach of IMERG merges both for global coverage.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q20.</span><span class="tag tag-image">Image Interp</span> Identify two dry regions visible in the annual mean (top panel) and explain why each receives minimal precipitation.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>1. The Sahara Desert / Arabian Peninsula</strong> (white/very light in the top panel, ~15&ndash;30&deg;N across North Africa): This is dry because it sits under the <strong>descending branch of the Hadley cell</strong>. Air that rose at the ITCZ descends at subtropical latitudes, warming adiabatically and suppressing cloud formation. This subsidence creates persistent high-pressure systems and clear skies. <strong>2. The Atacama Desert / coastal Peru</strong> (white strip along western South America): This is one of the driest places on Earth due to the <strong>cold Humboldt Current</strong> that chills the boundary layer, creating a strong temperature inversion that suppresses convection, combined with the rain shadow of the Andes. Additional dry regions include the polar areas (cold air holds little moisture), the interior of Australia (subtropical subsidence), and the rain shadow sides of major mountain ranges.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 06 -->
+<div class="image-group">
+<h3>Image 06 &mdash; GRACE Liquid Water Equivalent Anomaly</h3>
+<img src="output/06_grace_mass_anomaly.png" alt="GRACE LWE Thickness Anomaly, Late 2016">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q21.</span><span class="tag tag-image">Image Interp</span> What does this map show, and what do the red and blue colors represent? Identify the most prominent red feature and explain its significance.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    This map shows <strong>Liquid Water Equivalent (LWE) Thickness Anomaly</strong> in centimeters, measured by the GRACE satellite constellation as of late 2016. The values represent the <strong>accumulated change in water mass relative to a baseline</strong>. <strong>Red/orange = mass loss</strong> (less water/ice than the baseline); <strong>Blue = mass gain</strong>. The most prominent red feature is over <strong>Greenland</strong>, showing LWE anomalies approaching <strong>&minus;80 cm</strong>. This represents massive ice sheet mass loss &mdash; Greenland has been losing approximately 270 billion tons of ice per year, contributing to sea level rise. The scale of this signal (tens of cm of equivalent water thickness) reflects decades of accumulated ice loss. Other notable red areas include parts of <strong>India</strong> (groundwater depletion from agricultural pumping) and the <strong>western United States</strong> (drought and aquifer drawdown).
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q22.</span><span class="tag tag-physics">Physics</span> GRACE measures mass changes using gravity. Explain how two satellites flying in formation can detect changes in water mass on Earth's surface. What physical principle underlies this measurement?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    GRACE consists of <strong>two identical satellites flying ~220 km apart</strong> in the same polar orbit at ~500 km altitude. They continuously measure the <strong>distance between each other</strong> using a microwave ranging system accurate to within a micron. When the lead satellite passes over a region with greater mass (e.g., a large aquifer or ice sheet), it experiences a slightly <strong>stronger gravitational pull</strong> and accelerates ahead, increasing the inter-satellite distance. As the trailing satellite reaches the same mass anomaly, it also accelerates, and the distance returns to normal. By precisely tracking these distance changes, GRACE maps <strong>spatial variations in Earth's gravity field</strong>. Monthly gravity maps are differenced to reveal <strong>temporal changes</strong> in mass distribution. Since month-to-month mass changes at Earth's surface are dominated by the redistribution of water (ice, groundwater, soil moisture, ocean mass), GRACE effectively measures the water cycle. The underlying principle is <strong>Newton's law of universal gravitation</strong>: F = GMm/r&sup2;.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q23.</span><span class="tag tag-climate">Climate</span> How does the Greenland mass loss shown in this image relate to sea level rise? If Greenland has lost ice equivalent to &minus;80 cm of LWE over its area, estimate the contribution to global sea level.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    When ice melts on Greenland and flows into the ocean, it directly raises <strong>global mean sea level</strong>. To estimate: Greenland's ice sheet area is ~1.71 million km&sup2;. If the average LWE anomaly is &minus;80 cm (0.8 m), the total water volume lost &asymp; 1.71 &times; 10&sup6; km&sup2; &times; 0.0008 km = ~1,370 km&sup3;. The ocean area is ~361 million km&sup2;, so sea level rise &asymp; 1,370 / 361,000,000 km &asymp; 0.0038 m &asymp; <strong>3.8 mm</strong>. This is a rough estimate; actual Greenland contribution to sea level rise from ~2002&ndash;2016 is estimated at about 0.7 mm/year, totaling ~10 mm over that period. The GRACE data is crucial because it provides <strong>direct mass measurements</strong> independent of altimetry or surface temperature data, giving an independent confirmation of ice loss rates. GRACE-FO (Follow-On) continues these measurements from 2018 onward, showing the loss rate is <strong>accelerating</strong>.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 07 -->
+<div class="image-group">
+<h3>Image 07 &mdash; MODIS Land Surface Temperature &amp; Emissivity</h3>
+<img src="output/07_radiation_budget.png" alt="MODIS LST and Band 31 Emissivity, 2024 Annual Mean">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q24.</span><span class="tag tag-image">Image Interp</span> The top panel shows land surface temperature (LST) as an OLR proxy. Where are the hottest and coldest regions? What temperature range does the color scale span?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The color scale spans approximately <strong>230 K to 320 K</strong> (&minus;43&deg;C to 47&deg;C). The <strong>hottest regions (deep red, ~310&ndash;320 K)</strong> are the subtropical deserts: the Sahara, Arabian Peninsula, and interior Australia. These have high surface temperatures because of strong solar insolation, low cloud cover, and dry conditions (no evaporative cooling). The <strong>coldest regions (blue/purple, ~230&ndash;250 K)</strong> are the polar areas &mdash; Greenland and Antarctica &mdash; and high-altitude plateaus like the Tibetan Plateau. The annotation explains this as an "OLR proxy" because the <strong>Stefan-Boltzmann law (OLR &prop; &sigma;T&sup4;)</strong> means hotter surfaces emit more outgoing longwave radiation. This is exactly what CERES measures at the top of atmosphere to quantify Earth's energy budget.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q25.</span><span class="tag tag-energy">Energy Balance</span> Using the Stefan-Boltzmann law, calculate the OLR emitted by a desert surface at 320 K and a polar surface at 240 K. By what factor does the desert emit more?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The Stefan-Boltzmann law: <strong>E = &epsilon;&sigma;T&sup4;</strong>, where &sigma; = 5.67 &times; 10&sup-8; W/m&sup2;/K&sup4;. Assuming &epsilon; &asymp; 1 for simplicity: <strong>Desert (320 K):</strong> E = 5.67 &times; 10&sup-8; &times; 320&sup4; = 5.67 &times; 10&sup-8; &times; 1.049 &times; 10&sup10; &asymp; <strong>595 W/m&sup2;</strong>. <strong>Polar (240 K):</strong> E = 5.67 &times; 10&sup-8; &times; 240&sup4; = 5.67 &times; 10&sup-8; &times; 3.318 &times; 10&sup9; &asymp; <strong>188 W/m&sup2;</strong>. The ratio: 595/188 &asymp; <strong>3.2 times more emission from the desert</strong>. Note this follows (320/240)&sup4; = (4/3)&sup4; = 256/81 &asymp; 3.16. The T&sup4; dependence means temperature differences are amplified dramatically in terms of radiated power &mdash; a modest 80 K temperature difference produces more than a 3&times; difference in emitted radiation.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q26.</span><span class="tag tag-image">Image Interp</span> The bottom panel shows MODIS Band 31 emissivity. What emissivity values do water, sand, and vegetation have? Why does emissivity matter for accurate temperature retrieval?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    From the annotation: <strong>water &asymp; 0.99, sand &asymp; 0.92, vegetation &asymp; 0.97</strong>. The map shows most surfaces in dark red (high emissivity, &gt;0.95), with lighter orange/yellow areas where deserts have lower emissivity (~0.90&ndash;0.93). Emissivity matters because <strong>real surfaces are not perfect blackbodies</strong>. The radiation detected by a satellite is E = &epsilon;&sigma;T&sup4;, so if you assume &epsilon; = 1 but the actual emissivity is 0.92 (desert sand), you'll <strong>underestimate the true surface temperature</strong>. For accurate LST retrieval, the satellite must know the surface emissivity to correctly invert the measured radiance into temperature. MODIS uses multi-band techniques (the "split-window" method with bands 31 and 32 at 11 and 12 &mu;m) to simultaneously estimate emissivity and temperature. CERES also requires emissivity knowledge to convert top-of-atmosphere radiances into accurate outgoing longwave radiation for the energy budget.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 08 -->
+<div class="image-group">
+<h3>Image 08 &mdash; VIIRS Nighttime Lights</h3>
+<img src="output/08_viirs_nighttime_lights.png" alt="VIIRS Day-Night Band Nighttime Lights, 2025 Annual Average">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q27.</span><span class="tag tag-image">Image Interp</span> What satellite and sensor produced this nighttime lights data? What does the "Day-Night Band" (DNB) detect, and why is it uniquely suited for this measurement?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The data comes from the <strong>VIIRS (Visible Infrared Imaging Radiometer Suite)</strong> sensor aboard the <strong>Suomi NPP</strong> satellite (as noted in the annotation). The Day-Night Band is a <strong>panchromatic visible/near-IR channel (0.5&ndash;0.9 &mu;m)</strong> with extremely high radiometric sensitivity &mdash; it can detect light levels spanning <strong>seven orders of magnitude</strong>, from bright daytime scenes down to faint moonlight and artificial lighting. This dynamic range is achieved through a unique detector design with three gain stages (low, medium, high). The DNB is uniquely suited for nighttime lights because it can measure the very faint radiance emitted by city lights, gas flares, fishing boats, and even wildfires against the dark nighttime background, while avoiding saturation over bright city cores.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q28.</span><span class="tag tag-image">Image Interp</span> In the global view (left panel), identify three major bright clusters and explain what they represent. Why are some continental areas nearly completely dark?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Three major bright clusters: <strong>1. Eastern United States and Western Europe</strong> &mdash; dense networks of cities, highways, and suburban sprawl in highly urbanized, developed regions. <strong>2. Eastern China, Japan, and South Korea</strong> &mdash; extremely dense population centers and heavy industrialization along the Chinese coast (Beijing-Tianjin, Yangtze Delta/Shanghai, Pearl River Delta). <strong>3. The Indian subcontinent</strong> (shown in detail in the right panel) &mdash; bright nodes at major cities (Delhi, Mumbai, Kolkata, Chennai) connected by illuminated corridors along highways and railways. Dark continental areas include the <strong>Sahara, Amazon basin, central Australia, Siberia, and central Africa</strong> &mdash; these are dark because they have <strong>very low population density, minimal infrastructure, and little or no electrification</strong>. Nighttime lights serve as a proxy for urbanization, economic activity, and energy consumption.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q29.</span><span class="tag tag-climate">Climate</span> How can nighttime lights data be used as a proxy for studying climate change impacts? Give two specific examples.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>1. Energy consumption and CO&sub2; emissions:</strong> Nighttime light intensity correlates strongly with electricity use and GDP. Researchers use changes in nighttime lights to estimate regional energy consumption trends and, by extension, fossil fuel CO&sub2; emissions. Growing light output over time in developing nations (visible in India's detail panel showing rural electrification spreading) indicates increasing energy demand and likely increasing emissions unless that energy is from renewable sources. <strong>2. Disaster impact and recovery:</strong> After climate-related disasters (hurricanes, floods, wildfires), nighttime lights show sudden darkening of affected areas due to power outages and infrastructure damage. The rate at which lights recover indicates the pace of reconstruction. For example, after Hurricane Maria (2017), VIIRS nighttime lights showed Puerto Rico's grid was down for months, quantifying the disaster's severity. Additional uses include tracking urbanization patterns (urban heat island expansion), monitoring gas flaring (a direct greenhouse gas source), and detecting fishing fleet activity (marine ecosystem pressure).
+  </div></details>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 3e: CLIMATE PROCESSES (20%)                         -->
+<!-- ============================================================ -->
+<div class="section-header">Section 3e &mdash; Climate Processes (20%)</div>
+
+<!-- IMAGE 09 -->
+<div class="image-group">
+<h3>Image 09 &mdash; ENSO SST Time Series (Ni&ntilde;o 3.4 Region)</h3>
+<img src="output/09_enso_sst_timeseries.png" alt="Nino 3.4 SST and Anomaly Time Series, 2018-2025">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q30.</span><span class="tag tag-climate">Climate</span> The bottom panel shows SST anomalies with El Ni&ntilde;o and La Ni&ntilde;a thresholds marked. What are these threshold values? Identify the strongest El Ni&ntilde;o and La Ni&ntilde;a events visible in the 2018&ndash;2025 record.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The thresholds are <strong>+0.5&deg;C for El Ni&ntilde;o</strong> (red dashed line) and <strong>&minus;0.5&deg;C for La Ni&ntilde;a</strong> (blue dashed line). These are applied to the Ni&ntilde;o 3.4 region (5&deg;N&ndash;5&deg;S, 170&deg;W&ndash;120&deg;W). In the record shown: The <strong>strongest El Ni&ntilde;o</strong> occurs around <strong>late 2023 into early 2024</strong>, with anomalies reaching approximately <strong>+1.5 to +2.3&deg;C</strong> (tall red bars). The <strong>strongest La Ni&ntilde;a</strong> appears in <strong>late 2025</strong>, with anomalies plunging to approximately <strong>&minus;2.5 to &minus;3.0&deg;C</strong> (very tall blue bars at the end of the series). Other notable La Ni&ntilde;a periods include 2020&ndash;2021 and late 2024. ENSO events are officially declared when the anomaly exceeds the threshold for <strong>five consecutive overlapping 3-month periods</strong>, not just a single month.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q31.</span><span class="tag tag-climate">Climate</span> The top panel shows raw SST values oscillating between ~28&deg;C and ~34&deg;C. Why does the raw SST show a regular seasonal cycle even though ENSO is an interannual phenomenon?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The seasonal cycle in raw SST is driven by the <strong>annual variation of solar insolation</strong> and ocean-atmosphere interactions, not by ENSO. The Ni&ntilde;o 3.4 region straddles the equator in the tropical Pacific, where SST naturally varies by several degrees throughout the year due to changes in trade wind strength, mixed layer depth, and solar heating patterns. The <strong>anomaly</strong> (bottom panel) is calculated by subtracting the long-term monthly mean for each calendar month, which removes this predictable seasonal cycle and isolates the <strong>interannual ENSO signal</strong>. This is why the anomaly plot is essential for identifying El Ni&ntilde;o and La Ni&ntilde;a: a raw SST of 32&deg;C might be normal for one month but anomalously warm for another. The anomaly approach is a fundamental technique in climate science for separating forced/natural variability from the seasonal background.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q32.</span><span class="tag tag-climate">Climate</span> Describe the global climate impacts you would expect during the strong El Ni&ntilde;o event visible in 2023&ndash;2024. How does El Ni&ntilde;o affect precipitation patterns, tropical cyclones, and global mean temperature?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    During a strong El Ni&ntilde;o: <strong>Precipitation shifts:</strong> The warm pool and convective activity shift eastward toward the central/eastern Pacific, bringing heavy rains and flooding to Peru/Ecuador and drought to Indonesia, Australia, and parts of India. The Walker circulation weakens. <strong>Tropical cyclones:</strong> In the Atlantic, El Ni&ntilde;o increases vertical wind shear, which <strong>suppresses hurricane activity</strong>. In the eastern Pacific, hurricane activity increases. <strong>Global temperature:</strong> El Ni&ntilde;o releases heat from the ocean to the atmosphere, typically raising <strong>global mean temperature by 0.1&ndash;0.2&deg;C</strong> in the year following the event's peak. The 2023&ndash;2024 El Ni&ntilde;o contributed to 2024 being among the warmest years on record. Additional impacts include altered jet stream patterns (warmer/wetter winters in the southern U.S., drier conditions in the Pacific Northwest), coral bleaching from warm water, and disrupted fisheries off South America due to reduced upwelling.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 10 -->
+<div class="image-group">
+<h3>Image 10 &mdash; GRACE Mass Loss Time Series</h3>
+<img src="output/10_grace_mass_loss.png" alt="GRACE Greenland Ice Loss and NW India Groundwater Depletion">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q33.</span><span class="tag tag-climate">Climate</span> Compare the trend lines for Greenland (top) and NW India (bottom). What are the rates of mass loss, and what causes each?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Greenland: &minus;0.55 cm/month</strong> of LWE, a steep and persistent downward trend over the ~165-month record (2002&ndash;2017). The total loss is roughly 60&ndash;90 cm of LWE. This is caused by <strong>accelerating ice sheet melt and iceberg calving</strong> driven by rising global temperatures. Both surface melt (from warmer air) and marine-terminating glacier acceleration (from warmer ocean water undercutting glaciers) contribute. <strong>NW India: &minus;0.08 cm/month</strong>, about 7&times; slower than Greenland. This is caused by <strong>groundwater over-extraction</strong> for irrigation in one of the world's most intensively farmed regions (Punjab, Haryana, Rajasthan). India is the world's largest user of groundwater, and extraction rates far exceed natural recharge. Note the NW India signal shows a strong <strong>seasonal oscillation</strong> (monsoon recharge in summer, drawdown in dry season) superimposed on the declining trend, whereas Greenland's oscillation (summer melt, winter accumulation) is smaller relative to the trend.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q34.</span><span class="tag tag-image">Image Interp</span> The Greenland time series shows seasonal oscillations superimposed on the downward trend. What causes these oscillations, and why are they smaller than the oscillations in NW India?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Greenland's seasonal oscillations reflect the <strong>annual cycle of snow accumulation (winter) and surface melt (summer)</strong>. In winter, snowfall adds mass; in summer, melting removes mass. The amplitude is modest (~10&ndash;15 cm peak-to-trough) relative to the cumulative trend because Greenland's mass budget is dominated by the <strong>long-term ice loss signal</strong>. NW India's oscillations are proportionally larger (~20&ndash;30 cm peak-to-trough) relative to its trend because the <strong>Indian monsoon</strong> delivers massive seasonal water input: during July&ndash;September, monsoon rains recharge soil moisture and (partially) aquifers, creating sharp upward spikes. During the dry season (October&ndash;June), irrigation pumping draws down groundwater, creating the drops. The seasonal cycle in India is driven by a very dramatic wet/dry pattern, whereas Greenland's accumulation/melt cycle is more gradual.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q35.</span><span class="tag tag-climate">Climate</span> At the rate of &minus;0.55 cm/month, how much LWE has Greenland lost per year? If this mass is converted entirely to sea level rise, explain why GRACE data is considered critical evidence for climate change.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    At &minus;0.55 cm/month &times; 12 months = <strong>&minus;6.6 cm/year</strong> of LWE averaged over Greenland. Converting: Greenland area &asymp; 1.71 &times; 10&sup6; km&sup2; &times; 0.066 m = ~113 km&sup3; of water per year. With ocean area ~361 &times; 10&sup6; km&sup2;, that yields ~0.31 mm/year of sea level rise from Greenland alone. This aligns with published estimates (~0.7 mm/yr when accounting for the full ice sheet area and edge effects). GRACE data is <strong>critical climate evidence</strong> because: (1) It provides a <strong>direct, independent measurement of mass change</strong> not reliant on surface temperature records, ice core proxies, or models. (2) It covers the entire ice sheet simultaneously, unlike point measurements from weather stations. (3) The steady, unambiguous downward trend over 15+ years is difficult to attribute to anything other than sustained warming. (4) The data is publicly available and has been independently verified by multiple research groups.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 11 -->
+<div class="image-group">
+<h3>Image 11 &mdash; GPM ENSO Equatorial Precipitation Profile</h3>
+<img src="output/11_gpm_enso_precipitation.png" alt="Equatorial Precipitation Profile, El Nino 2023 vs La Nina 2022">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q36.</span><span class="tag tag-climate">Climate</span> Compare the 2023 El Ni&ntilde;o (blue) and 2022 La Ni&ntilde;a (orange) precipitation profiles. Where does the El Ni&ntilde;o year show more precipitation, and where does La Ni&ntilde;a show more?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    In the <strong>central and eastern Pacific (roughly &minus;180&deg; to &minus;80&deg;)</strong>, the El Ni&ntilde;o year (blue) shows notably higher precipitation &mdash; particularly around <strong>&minus;100&deg; to &minus;50&deg;</strong> longitude (eastern Pacific / Central America), where El Ni&ntilde;o values reach ~0.35&ndash;0.40 mm/hr versus near-zero for La Ni&ntilde;a. This reflects the eastward shift of the convective warm pool during El Ni&ntilde;o. Conversely, in the <strong>Maritime Continent and western Pacific (roughly 80&deg; to 150&deg;E)</strong>, the La Ni&ntilde;a year (orange) shows higher precipitation, reaching peaks of ~0.40&ndash;0.50 mm/hr versus ~0.20&ndash;0.35 for El Ni&ntilde;o. This confirms that during La Ni&ntilde;a, convection is concentrated in the western Pacific where the warm pool remains, while during El Ni&ntilde;o it migrates eastward. The <strong>Ni&ntilde;o 3.4 region</strong> (marked with gray dashed lines at ~170&deg;W&ndash;120&deg;W) sits right in the zone where this precipitation shift is most dramatic.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q37.</span><span class="tag tag-climate">Climate</span> Explain the Walker Circulation and how it connects SST anomalies in the Ni&ntilde;o 3.4 region to the precipitation shifts visible in this graph.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The <strong>Walker Circulation</strong> is a large-scale east-west atmospheric circulation cell over the tropical Pacific. Under normal/La Ni&ntilde;a conditions: warm SSTs in the western Pacific heat the air, causing it to <strong>rise (convection)</strong>, producing heavy rainfall (the high orange peaks at 80&ndash;150&deg;E). This air flows eastward aloft, then <strong>descends over the cool eastern Pacific</strong> (suppressing precipitation there &mdash; notice the near-zero orange values at &minus;150&deg; to &minus;80&deg;). At the surface, trade winds blow westward, maintaining the SST gradient by pushing warm water west and promoting cold upwelling in the east. During <strong>El Ni&ntilde;o</strong>: the trade winds weaken, warm water spreads eastward, and the rising branch of the Walker cell <strong>shifts eastward</strong>. This is exactly what the blue line shows &mdash; a new precipitation peak emerges in the eastern Pacific while western Pacific rainfall decreases. The Ni&ntilde;o 3.4 region is the "hinge point" where this ocean-atmosphere feedback is strongest.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q38.</span><span class="tag tag-image">Image Interp</span> Both profiles show a precipitation peak over central Africa / the Amazon (~&minus;60&deg; to 30&deg;). Why do these continental peaks appear similar in both El Ni&ntilde;o and La Ni&ntilde;a years?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The Amazon basin (~&minus;70&deg; to &minus;50&deg;) and central Africa (~10&deg; to 30&deg;E) are major centers of <strong>tropical convection driven primarily by local factors</strong> rather than ENSO. These include: intense solar heating of the land surface, moisture from tropical rainforest evapotranspiration (the "moisture recycling" effect), and convergence associated with the ITCZ. While ENSO can modulate the intensity somewhat (the Amazon tends to be slightly drier during El Ni&ntilde;o), the <strong>fundamental convective regime persists in both phases</strong> because the underlying drivers (equatorial solar forcing, continental moisture sources) are always present. This contrasts with the Pacific, where precipitation is highly sensitive to the position of the warm pool. Notice the peaks at these longitudes are broadly similar in magnitude between the two curves, confirming the continental convection is relatively ENSO-independent compared to the dramatic oceanic shifts.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 12 -->
+<div class="image-group">
+<h3>Image 12 &mdash; Earth Radiation Budget by Latitude</h3>
+<img src="output/12_radiation_budget.png" alt="Radiation Budget: Absorbed SW vs Outgoing LW by Latitude">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q39.</span><span class="tag tag-energy">Energy Balance</span> In the top panel, where do the absorbed shortwave (orange) and outgoing longwave (red) curves cross? What is the physical significance of these crossover points?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The curves cross at approximately <strong>&minus;35&deg; and +35&deg; latitude</strong> (roughly the subtropics). At these crossover latitudes, <strong>absorbed solar energy exactly equals emitted longwave energy</strong> &mdash; the local radiation budget is balanced. Equatorward of these crossovers (the tropics), absorbed SW exceeds outgoing LW, creating an <strong>energy surplus</strong>. Poleward, outgoing LW exceeds absorbed SW, creating an <strong>energy deficit</strong>. These crossover points define the boundary between the "source" region (tropics) and "sink" regions (mid-latitudes/poles) for Earth's heat transport. The surplus energy must be transported poleward by <strong>atmospheric circulation (Hadley, Ferrel, polar cells) and ocean currents (Gulf Stream, Kuroshio)</strong> to balance the deficit &mdash; this is the fundamental driver of weather and climate.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q40.</span><span class="tag tag-energy">Energy Balance</span> The bottom panel shows net radiation (absorbed SW minus outgoing LW). Why do the red bars (surplus) peak in the subtropics around &minus;30&deg; to &minus;20&deg; rather than exactly at the equator?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Looking at the top panel reveals why: the outgoing LW (red curve) has a <strong>sharp peak near the equator</strong> (~450 W/m&sup2;), which is significantly higher than the absorbed SW (~360 W/m&sup2;) at that latitude. This means the equatorial region actually shows a net <strong>deficit</strong> in this analysis (the blue bars near 0&deg; in the bottom panel). The OLR spike at the equator is computed from MODIS land surface temperature using &sigma;T&sup4;, and the tropical land/ocean surface is very warm, driving high OLR. Meanwhile, the absorbed SW curve is broad and relatively flat across the tropics (peaking ~&minus;10&deg; to +10&deg;). The <strong>maximum surplus</strong> occurs where absorbed SW is still high but OLR has decreased enough (slightly cooler surfaces in the subtropics) to create the largest positive difference. Note: in real TOA measurements from CERES, the equatorial region typically shows a surplus because clouds and atmospheric greenhouse effects reduce the actual OLR below the surface &sigma;T&sup4; estimate used here.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q41.</span><span class="tag tag-energy">Energy Balance</span> What satellite instrument directly measures Earth's radiation budget at the top of atmosphere? How does it differ from the MODIS-derived estimate shown here?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>CERES (Clouds and the Earth's Radiant Energy System)</strong> is the primary instrument for measuring Earth's radiation budget. CERES flies on Terra, Aqua, Suomi NPP, and NOAA-20, and directly measures <strong>top-of-atmosphere (TOA) radiance</strong> in three broadband channels: shortwave (0.3&ndash;5 &mu;m), longwave (5&ndash;200 &mu;m), and total (0.3&ndash;200 &mu;m). The key difference: this image uses <strong>surface temperature from MODIS LST</strong> multiplied by &sigma;T&sup4; as an OLR proxy, which overestimates actual OLR because it ignores the atmosphere's greenhouse effect &mdash; the atmosphere absorbs some surface LW radiation and re-emits it at colder temperatures, reducing what escapes to space. CERES measures the actual radiation leaving the top of the atmosphere, which includes the greenhouse effect. Typical CERES OLR values are ~240 W/m&sup2; globally averaged, whereas &sigma;T&sup4; from surface temperature gives ~390 W/m&sup2; &mdash; the difference (~150 W/m&sup2;) is the greenhouse effect.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 13 -->
+<div class="image-group">
+<h3>Image 13 &mdash; Greenhouse Gases: Methane &amp; NO&sub2;</h3>
+<img src="output/13_greenhouse_gases.png" alt="Sentinel-5P CH4 and NO2, Jan-Jun 2025">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q42.</span><span class="tag tag-climate">Climate</span> The top panel shows atmospheric methane (CH&sub4;) column concentrations ranging from ~1750 to 1950 ppb. Where are the highest concentrations, and what are the primary sources of methane?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The highest CH&sub4; concentrations (red, ~1900&ndash;1950 ppb) appear over <strong>tropical wetlands (Amazon, central Africa, Southeast Asia)</strong>, <strong>rice-growing regions (South and East Asia)</strong>, and areas of <strong>fossil fuel extraction (Middle East, Siberia, North America)</strong>. Primary methane sources include: <strong>1. Wetlands</strong> (~30% of emissions) &mdash; anaerobic decomposition of organic matter by methanogenic archaea. <strong>2. Agriculture</strong> (~25%) &mdash; enteric fermentation in livestock (cattle) and flooded rice paddies. <strong>3. Fossil fuels</strong> (~20%) &mdash; natural gas leaks during extraction, processing, and transport, plus coal mining ventilation. <strong>4. Waste</strong> (~15%) &mdash; landfill decomposition. As noted in the annotation, methane is <strong>80&times; more potent than CO&sub2; over 20 years</strong> (GWP-20), making it a critical short-term climate target despite its lower atmospheric concentration.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q43.</span><span class="tag tag-image">Image Interp</span> The bottom panel shows tropospheric NO&sub2;. Identify the brightest hotspots and explain why NO&sub2; patterns differ dramatically from CH&sub4; patterns.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The brightest NO&sub2; hotspots are over <strong>eastern China</strong> (Beijing-Tianjin-Hebei industrial belt, Yangtze Delta), <strong>northern India</strong> (Indo-Gangetic Plain), <strong>Western Europe</strong> (Rhine-Ruhr, Benelux), <strong>eastern United States</strong> (Northeast corridor), and the <strong>Middle East</strong> (Persian Gulf). Shipping lanes are also faintly visible as lines across oceans. NO&sub2; patterns differ from CH&sub4; because: <strong>NO&sub2; is primarily from combustion</strong> (vehicles, power plants, industry), so it concentrates tightly over urban/industrial areas. CH&sub4; has diverse sources including diffuse natural ones (wetlands). Additionally, NO&sub2; has a <strong>very short atmospheric lifetime (~hours to 1 day)</strong> &mdash; it is quickly destroyed by photolysis and reaction with OH radicals. This means NO&sub2; stays close to its emission source and doesn't spread globally. CH&sub4; has a lifetime of <strong>~12 years</strong>, so it mixes more broadly across the hemisphere, producing a smoother spatial pattern with less extreme local peaks.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q44.</span><span class="tag tag-physics">Physics</span> Both measurements come from Sentinel-5P. What technique does this satellite use to measure trace gas concentrations, and what part of the EM spectrum does it observe?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Sentinel-5P carries the <strong>TROPOMI (TROPOspheric Monitoring Instrument)</strong>, which uses <strong>passive spectroscopy of reflected/scattered sunlight</strong>. It measures the spectrum of sunlight that passes through the atmosphere and reflects off Earth's surface. Each gas absorbs specific wavelengths, leaving characteristic <strong>absorption fingerprints</strong> in the spectrum. TROPOMI observes in the <strong>ultraviolet (270&ndash;500 nm)</strong> for NO&sub2;, O&sub3;, SO&sub2;; the <strong>visible (300&ndash;500 nm)</strong>; the <strong>near-infrared (675&ndash;775 nm)</strong>; and the <strong>shortwave infrared (2305&ndash;2385 nm)</strong> for CH&sub4; and CO. The technique is called <strong>Differential Optical Absorption Spectroscopy (DOAS)</strong> for NO&sub2; and similar retrieval algorithms for other species. The annotation notes Sentinel-5P provides measurements "similar to OCO-2/Aura measurements" &mdash; OCO-2 specializes in CO&sub2; using SWIR, and Aura's OMI instrument pioneered the tropospheric NO&sub2; measurements that TROPOMI now provides at higher resolution (3.5 &times; 5.5 km).
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 14 -->
+<div class="image-group">
+<h3>Image 14 &mdash; Carbon Cycle: Seasonal NDVI</h3>
+<img src="output/14_carbon_cycle_ndvi.png" alt="MODIS NDVI Summer vs Winter and Difference">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q45.</span><span class="tag tag-image">Image Interp</span> What is NDVI, how is it calculated, and why does it indicate vegetation health? What NDVI values correspond to bare soil, sparse vegetation, and dense forest?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>NDVI = (NIR &minus; Red) / (NIR + Red)</strong>, where NIR is near-infrared reflectance and Red is visible red reflectance. It works because <strong>chlorophyll strongly absorbs red light</strong> (for photosynthesis) while the <strong>mesophyll cell structure strongly reflects NIR</strong>. Healthy, dense vegetation has high NIR reflectance and low red reflectance, yielding high NDVI. Typical values: <strong>bare soil/rock: 0.1&ndash;0.2</strong> (similar reflectance in both bands); <strong>sparse vegetation/grassland: 0.2&ndash;0.5</strong>; <strong>dense forest/cropland: 0.6&ndash;0.9</strong>. Water has negative NDVI (absorbs NIR more than red). In the summer panel (top), Northern Hemisphere forests and croplands appear deep green (high NDVI ~0.6&ndash;0.8), while deserts remain orange/brown (low NDVI). In winter (middle panel), deciduous forests and high-latitude regions drop to low NDVI as leaves fall and snow covers the ground.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q46.</span><span class="tag tag-climate">Climate</span> The title states this seasonal vegetation cycle drives the annual CO&sub2; oscillation &mdash; the "breathing of the planet." Explain this connection.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    During Northern Hemisphere summer (top panel), the vast boreal and temperate forests of North America, Europe, and Asia are in full leaf, performing intense <strong>photosynthesis: CO&sub2; + H&sub2;O &rarr; C&sub6;H&sub12;O&sub6; + O&sub2;</strong>. This draws down atmospheric CO&sub2; by approximately <strong>6&ndash;8 ppm</strong> between May and September. During winter (middle panel), photosynthesis nearly ceases in these regions while <strong>respiration and decomposition continue</strong>, releasing CO&sub2; back into the atmosphere. This creates the well-known <strong>"Keeling Curve" sawtooth pattern</strong> superimposed on the rising long-term CO&sub2; trend. The Northern Hemisphere dominates this cycle because it has <strong>far more land area (and thus more vegetation)</strong> than the Southern Hemisphere. The bottom difference map (green areas) shows exactly which regions contribute most to this seasonal swing: the boreal forests of Canada/Siberia, temperate deciduous forests, and agricultural regions of the Great Plains and Central Asia.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q47.</span><span class="tag tag-image">Image Interp</span> In the difference map (bottom panel), why do tropical forests (Amazon, Congo) show minimal green despite being the densest vegetation on Earth?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The difference map shows <strong>summer NDVI minus winter NDVI</strong>, so it highlights <strong>seasonal change</strong>, not absolute greenness. Tropical evergreen forests maintain <strong>consistently high NDVI year-round</strong> because they exist in a climate without a cold/dormant season &mdash; there is no winter die-back. Both the summer and winter panels show deep green over the Amazon and Congo, so their difference is near zero (white/minimal color in the bottom panel). In contrast, <strong>deciduous forests and agricultural lands</strong> at higher latitudes undergo dramatic seasonal transitions: bare/dormant in winter, lush in summer. These show up as bright green in the difference map. This is an important interpretation lesson: <strong>difference maps highlight variability, not magnitude</strong>. The tropical forests are essential year-round carbon sinks, but their contribution to the seasonal CO&sub2; oscillation is small compared to the temperate/boreal zones that switch between active and dormant states.
+  </div></details>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 3c: PHYSICS OF REMOTE SENSING (25%)                -->
+<!-- ============================================================ -->
+<div class="section-header">Section 3c &mdash; Physics of Remote Sensing (25%)</div>
+
+<!-- IMAGE 15 -->
+<div class="image-group">
+<h3>Image 15 &mdash; Blackbody Radiation Curves</h3>
+<img src="output/15_blackbody_radiation.png" alt="Blackbody Curves for Stars and Earth Temperatures">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q48.</span><span class="tag tag-physics">Physics</span> Using Wien's Displacement Law (&lambda;<sub>peak</sub> = b/T, b = 2898 &mu;m&middot;K), verify the peak wavelengths shown for the Sun (5778 K) and Earth's surface (288 K). Show your calculations.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Sun:</strong> &lambda;<sub>peak</sub> = 2898 / 5778 = <strong>0.501 &mu;m</strong>, which matches the legend value of 0.50 &mu;m. This falls in the <strong>visible green</strong> part of the spectrum (the green shaded band on the left plot). <strong>Earth surface (288 K):</strong> &lambda;<sub>peak</sub> = 2898 / 288 = <strong>10.06 &mu;m</strong>, matching the legend value of 10.1 &mu;m. This is in the <strong>thermal infrared</strong>. You can verify the other curves similarly: Cooler star (4000 K): 2898/4000 = 0.72 &mu;m (near-IR/red edge); Hotter star (7000 K): 2898/7000 = 0.41 &mu;m (violet); Effective emission (255 K): 2898/255 = 11.4 &mu;m; Cloud tops (220 K): 2898/220 = 13.2 &mu;m. The key insight: <strong>hotter objects peak at shorter wavelengths</strong>. The Sun peaks in visible light; the Earth peaks in thermal IR &mdash; this spectral separation is why incoming solar and outgoing terrestrial radiation can be measured independently.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q49.</span><span class="tag tag-physics">Physics</span> Compare the y-axis units and scales between the two panels. By approximately what factor does the Sun's peak spectral radiance exceed Earth's? What law explains this difference?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The left panel (stars) uses <strong>TW/sr/m&sup3;</strong> (terawatts), with the Sun peaking at ~26 TW/sr/m&sup3;. The right panel (Earth) uses <strong>MW/sr/m&sup3;</strong> (megawatts), with the Earth surface peaking at ~8 MW/sr/m&sup3;. Converting: 26 TW = 26 &times; 10&sup6; MW, so the Sun's peak spectral radiance is roughly <strong>26 &times; 10&sup6; / 8 &asymp; 3.3 million times greater</strong> than Earth's. This is explained by the <strong>Stefan-Boltzmann Law</strong>: total radiated power scales as <strong>T&sup4;</strong>. The ratio (5778/288)&sup4; = (20.06)&sup4; &asymp; <strong>162,000</strong>. The spectral radiance ratio is even larger because Wien's law concentrates the hotter body's emission into a narrower wavelength range (relative to its peak). Planck's law governs the full spectral shape: B(&lambda;,T) = (2hc&sup2;/&lambda;&sup5;) &times; 1/(e^(hc/&lambda;kT) &minus; 1), where the peak scales roughly as T&sup5; in spectral radiance.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q50.</span><span class="tag tag-physics">Physics</span> On the right panel, three Earth-temperature curves are shown: 288 K, 255 K, and 220 K. What physical scenario does each represent, and why are all three relevant to remote sensing of climate?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>288 K (15&deg;C) &mdash; Earth surface:</strong> The actual average surface temperature, representing radiation emitted by the ground/ocean. This is what surface-pointing IR sensors measure. <strong>255 K (&minus;18&deg;C) &mdash; Effective emission temperature:</strong> The temperature Earth would need to radiate to balance incoming solar energy (&sigma;T&sup4; = 240 W/m&sup2;). This is the temperature seen from space at the top of atmosphere, accounting for the greenhouse effect &mdash; the atmosphere absorbs surface radiation and re-emits from colder altitudes. The difference (288 &minus; 255 = 33 K) quantifies the <strong>greenhouse warming</strong>. <strong>220 K (&minus;53&deg;C) &mdash; Cloud tops:</strong> The temperature of high tropical cloud tops at ~12 km altitude. This is what geostationary IR sensors see when viewing deep convective clouds (as in Image 04). All three are critical for climate monitoring: surface temperature tracks warming, effective temperature tracks Earth's radiation to space, and cloud-top temperature indicates convective intensity and cloud height.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q51.</span><span class="tag tag-physics">Physics</span> Why is the visible light band (green shading) positioned where it is relative to the Sun's blackbody curve? What evolutionary/physical argument explains this?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The visible light band (~0.38&ndash;0.70 &mu;m, green shading) is centered almost exactly on the <strong>peak of the Sun's emission spectrum</strong>. This is not a coincidence: <strong>human eyes evolved to be most sensitive to the wavelengths where solar radiation is most intense</strong>, since that maximizes the available photons for vision. From a physics standpoint, Earth's atmosphere is also relatively <strong>transparent in the visible band</strong> (one of several "atmospheric windows"), so these wavelengths reach the surface efficiently. The combination of peak solar output and atmospheric transparency means the visible band carries the <strong>maximum information about the surface</strong> under solar illumination &mdash; which is why true-color satellite images (like Image 01) use these bands. Remote sensing extends beyond human vision into the UV, NIR, SWIR, and TIR to access information invisible to our eyes but critical for measuring vegetation, water, temperature, and atmospheric gases.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 16 -->
+<div class="image-group">
+<h3>Image 16 &mdash; EM Spectrum &amp; Remote Sensing Applications</h3>
+<img src="output/16_em_spectrum_sensors.png" alt="Electromagnetic Spectrum with Satellite Sensor Applications">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q52.</span><span class="tag tag-physics">Physics</span> List the EM spectrum bands shown in this diagram from shortest to longest wavelength. For each band, name one satellite sensor and its primary application.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    From shortest to longest wavelength: <strong>1. UV (0.01&ndash;0.4 &mu;m):</strong> Aura/OMI &mdash; ozone monitoring, trace gas absorption. <strong>2. Visible (0.4&ndash;0.7 &mu;m):</strong> MODIS, GOES &mdash; true color imagery, cloud detection, ocean color. <strong>3. Short-wave IR / SWIR (0.7&ndash;3 &mu;m):</strong> MODIS, Landsat &mdash; vegetation indices (NDVI), snow/ice discrimination, fire detection. <strong>4. Thermal IR (3&ndash;15 &mu;m):</strong> ECOSTRESS, CERES &mdash; land/sea surface temperature, outgoing longwave radiation, energy budget. <strong>5. Far IR (15&ndash;1000 &mu;m):</strong> CrIS &mdash; atmospheric temperature and moisture profiling (sounding). <strong>6. Microwave (1 mm&ndash;1 m):</strong> GPM, CloudSat &mdash; precipitation measurement, cloud profiling through clouds. <strong>7. Radio/Radar (1 m&ndash;1 km):</strong> JASON (altimetry), GRACE &mdash; sea surface height, Sentinel-1 SAR for surface imaging through clouds. Each band exploits different physical interactions between EM radiation and the atmosphere/surface.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q53.</span><span class="tag tag-physics">Physics</span> Why is the x-axis displayed on a logarithmic scale? What does this reveal about the relative "width" of each band?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The x-axis is logarithmic because the EM spectrum spans <strong>over 8 orders of magnitude</strong> from UV (~0.01 &mu;m) to radio (~1 km = 10&sup9; &mu;m). A linear scale would make the visible/IR bands vanishingly thin slivers while radio dominates the entire plot. The log scale reveals that the <strong>visible band is extremely narrow</strong> compared to the full spectrum &mdash; only about one octave (factor of ~2 in wavelength, from 0.4 to 0.7 &mu;m). Meanwhile, the microwave and radio bands each span several orders of magnitude. Despite its narrowness, the visible band carries enormous information because it corresponds to the Sun's peak emission (maximum photon flux) and an atmospheric window. The log scale also shows that the thermal IR and SWIR bands, though much wider than visible in absolute terms, are still relatively compact compared to microwave and radio. This underscores how remote sensing exploits the <strong>full breadth of the EM spectrum</strong> far beyond what human eyes can see.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q54.</span><span class="tag tag-physics">Physics</span> Why are microwave and radar sensors (GPM, CloudSat, JASON) essential complements to visible/IR sensors? What fundamental limitation of visible and thermal IR do they overcome?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The fundamental limitation of visible and thermal IR sensors is that they <strong>cannot see through clouds</strong>. Water droplets and ice crystals are roughly the same size as visible/IR wavelengths (~1&ndash;100 &mu;m), causing strong scattering and absorption. Since ~67% of Earth is cloud-covered at any given time, this creates massive gaps in visible/IR data. <strong>Microwave and radar wavelengths (mm to m)</strong> are much larger than cloud particles, so they <strong>pass through clouds with minimal attenuation</strong>. This enables: GPM to measure precipitation rates inside storm clouds; CloudSat's 94 GHz radar to profile cloud vertical structure; JASON's radar altimeter to measure sea surface height regardless of weather; and SAR (Sentinel-1) to image the surface day or night, in any weather. The trade-off is that longer wavelengths require larger antennas for the same spatial resolution (due to the <strong>diffraction limit: &theta; &asymp; &lambda;/D</strong>), which is why microwave instruments generally have coarser spatial resolution than optical sensors.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 17 -->
+<div class="image-group">
+<h3>Image 17 &mdash; Orbital Mechanics</h3>
+<img src="output/17_orbital_mechanics.png" alt="Kepler's Third Law and Orbit Types Schematic">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q55.</span><span class="tag tag-physics">Physics</span> Kepler's Third Law states T&sup2; &prop; a&sup3;. Using the left panel, verify this relationship: if a LEO satellite at ~700 km altitude has a period of ~1.6 hours, predict the period at geostationary altitude (35,786 km).</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Kepler's Third Law: <strong>T&sup2; = (4&pi;&sup2;/GM) a&sup3;</strong>, where a is the semi-major axis (Earth radius + altitude). For LEO: a&sub1; = 6371 + 700 = 7071 km. For GEO: a&sub2; = 6371 + 35,786 = 42,157 km. The ratio: (T&sub2;/T&sub1;)&sup2; = (a&sub2;/a&sub1;)&sup3; = (42,157/7,071)&sup3; = (5.96)&sup3; = 211.7. So T&sub2;/T&sub1; = &radic;211.7 = 14.55. Therefore T&sub2; = 1.6 &times; 14.55 &asymp; <strong>23.3 hours</strong>, which is close to the actual 24-hour geostationary period. The slight discrepancy comes from rounding the LEO period (actual ~98 min = 1.63 hr for 700 km). The left panel confirms this relationship: the curve passes through the cluster of LEO satellites at ~1.5&ndash;2 hours and reaches the red dashed 24-hour line right at GOES-16's position. The log-log axes make the T&sup2; &prop; a&sup3; relationship appear as a straight line with slope 3/2.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q56.</span><span class="tag tag-physics">Physics</span> The right panel shows four orbit types. Explain the difference between LEO sun-synchronous, MEO, GEO, and HEO orbits, and name a satellite in each category.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>LEO Sun-synchronous (200&ndash;2000 km):</strong> Green circle, closest to Earth. The orbit plane precesses at exactly the rate Earth orbits the Sun, maintaining a constant local solar time at each latitude crossing. This ensures consistent illumination for comparison over time. Examples: <strong>MODIS (Terra/Aqua), Suomi NPP, OCO-2, Aura, PACE, Landsat</strong>. <strong>MEO (2,000&ndash;35,786 km):</strong> Yellow dashed circle. Used primarily by navigation constellations (GPS at ~20,200 km). Few Earth observation satellites use MEO. <strong>GEO (35,786 km):</strong> Red circle. Fixed position over the equator with 24-hour period. Provides continuous coverage of one hemisphere. Example: <strong>GOES-16/17/18</strong>. <strong>HEO (Highly Elliptical Orbit):</strong> Purple dotted ellipse. Has a very high apogee and low perigee, spending most of its time at high altitude over one hemisphere. Useful for polar/high-latitude coverage where GEO has poor viewing geometry. Example: <strong>Molniya orbits</strong> for Russian communications, and Tundra orbits.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q57.</span><span class="tag tag-physics">Physics</span> Most Earth observation satellites (MODIS, Suomi NPP, OCO-2, Aura, PACE) are clustered in LEO at 600&ndash;800 km. Why is this altitude range preferred? What are the trade-offs of going lower or higher?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The 600&ndash;800 km range is optimal because: <strong>1. Spatial resolution:</strong> Closer to Earth means finer ground resolution for a given telescope aperture (diffraction limit &theta; = &lambda;/D, ground resolution = altitude &times; &theta;). <strong>2. Atmospheric drag:</strong> Below ~500 km, residual atmospheric drag is significant, requiring frequent orbit-raising maneuvers and shortening mission life. Above ~600 km, drag is negligible for multi-year missions. <strong>3. Sun-synchronous orbit:</strong> The required inclination for sun-synchronous precession depends on altitude; the 600&ndash;800 km range gives inclinations of ~97&ndash;99&deg;, providing excellent polar coverage. <strong>4. Radiation environment:</strong> Above ~1,000 km, satellites enter the Van Allen radiation belts, which damage electronics and degrade solar panels. <strong>Going lower</strong> improves resolution but increases drag and reduces swath width. <strong>Going higher</strong> (toward MEO/GEO) sacrifices resolution dramatically but gains coverage area and temporal sampling. The LEO sweet spot balances all these factors for Earth observation.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 18 -->
+<div class="image-group">
+<h3>Image 18 &mdash; Imaging Fidelity Table</h3>
+<img src="output/18_imaging_fidelity.png" alt="Imaging Fidelity Parameters for Science Olympiad Satellites">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q58.</span><span class="tag tag-physics">Physics</span> Define GSD, IFOV, FOV, and swath width. Using the formulas at the top of the image, verify the GSD for MODIS (Aqua): altitude = 705 km, IFOV = 355 &mu;rad.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>GSD (Ground Sample Distance):</strong> The size of one pixel on the ground &mdash; the finest spatial detail the sensor can resolve. <strong>IFOV (Instantaneous Field of View):</strong> The angular cone seen by a single detector element, in radians. <strong>FOV (Field of View):</strong> The total angular extent of the sensor's scan across-track. <strong>Swath width:</strong> The ground distance covered by the full FOV. <strong>Verification for MODIS:</strong> GSD = altitude &times; IFOV = 705 km &times; 355 &times; 10&supmin;&sup6; = 705,000 m &times; 0.000355 = <strong>250.3 m</strong>, which matches the table value of 250 m. Similarly, Swath = altitude &times; FOV = 705 km &times; tan(189.4&deg;/2) &times; 2 &asymp; 2330 km (the exact calculation requires accounting for Earth's curvature at such wide scan angles, but the formula gives the correct order of magnitude). Smaller GSD means finer spatial detail but typically narrower swath or slower data rates.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q59.</span><span class="tag tag-physics">Physics</span> GOES-16 ABI has a GSD of 500 m despite being at 35,786 km altitude. ECOSTRESS achieves 70 m GSD from only 408 km. Explain why GOES-16 can achieve reasonable resolution from such extreme altitude, and why ECOSTRESS has such a narrow swath (53 km).</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    GOES-16 achieves 500 m GSD from GEO by using a very small IFOV: <strong>14 &mu;rad</strong>, which requires a large, precisely figured telescope (~30 cm aperture). GSD = 35,786 km &times; 14 &times; 10&supmin;&sup6; = 501 m. This is an engineering triumph but still ~2&times; coarser than MODIS from 50&times; closer. The tiny IFOV demands extreme pointing stability and long integration times. ECOSTRESS achieves 70 m GSD with IFOV = 172 &mu;rad from 408 km (GSD = 408 &times; 0.000172 = 70 m), which is much easier optically. However, its <strong>narrow FOV (7.4&deg;)</strong> yields only a 53 km swath because ECOSTRESS is a thermal IR instrument on the ISS &mdash; thermal detectors need longer dwell times per pixel, and the narrow swath is the trade-off for achieving fine thermal resolution. Compare to MODIS with FOV = 189.4&deg; and 2330 km swath: MODIS scans a whiskbroom mirror across a huge angle, trading some edge-of-scan distortion for enormous coverage.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q60.</span><span class="tag tag-physics">Physics</span> CloudSat CPR and CALIPSO CALIOP both fly at 705 km but have very different swaths (1.4 km vs 0.07 km). Why are these instruments designed with such narrow coverage? What type of measurement do they make?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Both CloudSat and CALIPSO are <strong>active profiling instruments</strong> that look straight down along a narrow curtain. <strong>CloudSat CPR</strong> is a 94 GHz cloud radar that sends microwave pulses downward and measures returns at each altitude, building a <strong>vertical cross-section of cloud and precipitation structure</strong>. Its 1.4 km swath is the footprint of the radar beam. <strong>CALIPSO CALIOP</strong> is a <strong>lidar</strong> (laser radar) that fires pulses of light (532 and 1064 nm) and measures backscatter from aerosols and thin clouds, providing vertical profiles of aerosol layers, cirrus, and cloud-top heights. Its 0.07 km (70 m) footprint is the diameter of the laser spot on the ground. Neither instrument is designed for wide-area imaging &mdash; they sacrifice spatial coverage for <strong>unique vertical information</strong> that no passive imager can provide. They fly in the A-Train constellation with MODIS/Aqua so their narrow profiles can be combined with wide-swath context imagery.
+  </div></details>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 3f: ENERGY BALANCE (20%)                            -->
+<!-- ============================================================ -->
+<div class="section-header">Section 3f &mdash; Energy Balance (20%)</div>
+
+<!-- IMAGE 19 -->
+<div class="image-group">
+<h3>Image 19 &mdash; Equilibrium Temperature &amp; Energy Balance</h3>
+<img src="output/19_equilibrium_temperature.png" alt="Planetary Equilibrium Temperature vs Albedo and Earth Energy Balance Diagram">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q61.</span><span class="tag tag-energy">Energy Balance</span> Using the equilibrium temperature formula T = [S&sub0;(1&minus;&alpha;) / (4&sigma;)]<sup>1/4</sup>, calculate Earth's equilibrium temperature with no atmosphere (&alpha; = 0.30, S&sub0; = 1368 W/m&sup2;). Why is this different from the actual surface temperature of 15&deg;C?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>T = [1368 &times; (1 &minus; 0.30) / (4 &times; 5.67 &times; 10&supmin;&sup8;)]<sup>1/4</sup></strong> = [1368 &times; 0.70 / 2.268 &times; 10&supmin;&sup7;]<sup>1/4</sup> = [957.6 / 2.268 &times; 10&supmin;&sup7;]<sup>1/4</sup> = [4.224 &times; 10&sup9;]<sup>1/4</sup> = <strong>255 K = &minus;18&deg;C</strong>. This matches the "Earth (no atm)" point on the graph at &alpha; = 0.30 showing T = &minus;18.2&deg;C. The actual surface temperature is <strong>+15&deg;C (288 K)</strong>, which is 33&deg;C warmer. This difference is the <strong>greenhouse effect</strong>: the atmosphere is transparent to incoming shortwave solar radiation but absorbs outgoing longwave IR radiation (primarily by H&sub2;O, CO&sub2;, and CH&sub4;), re-emitting some back toward the surface. The right panel diagram shows this: the surface receives both solar radiation AND ~340 W/m&sup2; of greenhouse back-radiation from the atmosphere, warming it above the no-atmosphere equilibrium.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q62.</span><span class="tag tag-energy">Energy Balance</span> The left panel shows three curves for different atmospheric optical depths (&tau; = 0, 0.8, 1.6). What does increasing &tau; do to the equilibrium temperature at a given albedo? What physical process does &tau; represent?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    Increasing &tau; <strong>raises the equilibrium temperature</strong> at every albedo. The blue curve (&tau; = 0, no atmosphere) gives the lowest temperatures; the orange curve (&tau; = 0.8, moderate greenhouse) is warmer; the red curve (&tau; = 1.6, strong greenhouse) is warmest. <strong>&tau; is the infrared optical depth of the atmosphere</strong> &mdash; it measures how opaque the atmosphere is to outgoing longwave radiation. Higher &tau; means the atmosphere absorbs more surface IR before it can escape to space, trapping more energy. At Earth's albedo of 0.30: the no-atmosphere temperature is &minus;18&deg;C, the moderate greenhouse (close to present Earth) gives ~+15&deg;C (matching the red star "Actual Earth"), and a stronger greenhouse would push temperatures higher. Venus, with its dense CO&sub2; atmosphere, has an extreme optical depth that produces surface temperatures of ~460&deg;C despite being farther from the Sun than Mercury. This graph powerfully illustrates how greenhouse gas concentrations (which control &tau;) determine planetary habitability.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q63.</span><span class="tag tag-energy">Energy Balance</span> The right panel shows Earth's current energy imbalance is ~1.0 W/m&sup2;. What does this mean physically, what causes it, and what are its consequences?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    An energy imbalance of <strong>~1.0 W/m&sup2; means Earth is absorbing ~1 W/m&sup2; more energy than it radiates to space</strong>. This excess energy accumulates primarily in the oceans (~93%), with smaller fractions warming the atmosphere, land, and melting ice. The imbalance is caused by the <strong>enhanced greenhouse effect</strong>: rising CO&sub2; and other greenhouse gases have increased atmospheric &tau;, trapping more outgoing longwave radiation. The system hasn't yet reached a new equilibrium because the oceans have enormous thermal inertia. Consequences: <strong>continued warming</strong> even if emissions stopped today (committed warming), <strong>ocean heat content increase</strong> (driving thermal expansion and sea level rise), <strong>ice sheet and glacier melt</strong> (additional sea level rise), and <strong>more energy available for extreme weather</strong>. The right panel numbers: S&sub0; &asymp; 1368 W/m&sup2; incoming, ~102 W/m&sup2; reflected (&alpha; = 0.30), leaving ~239 W/m&sup2; absorbed. OLR is ~239 W/m&sup2; but slightly less than absorbed &mdash; the ~1 W/m&sup2; difference is the imbalance driving global warming.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 20 -->
+<div class="image-group">
+<h3>Image 20 &mdash; Radiative Forcing &amp; Climate Sensitivity</h3>
+<img src="output/20_radiative_forcing.png" alt="CO2 Radiative Forcing and Temperature Response">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q64.</span><span class="tag tag-energy">Energy Balance</span> The left panel shows the formula &Delta;F = 5.35 &times; ln(C/C&sub0;). Calculate the radiative forcing at the current CO&sub2; level (~420 ppm) relative to pre-industrial (~280 ppm). Then calculate the forcing at 2&times; pre-industrial (560 ppm).</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>Current (420 ppm):</strong> &Delta;F = 5.35 &times; ln(420/280) = 5.35 &times; ln(1.5) = 5.35 &times; 0.405 = <strong>2.17 W/m&sup2;</strong>. This matches the graph, where the green dashed line at 420 ppm intersects the curve at ~2.2 W/m&sup2;. <strong>2&times; pre-industrial (560 ppm):</strong> &Delta;F = 5.35 &times; ln(560/280) = 5.35 &times; ln(2) = 5.35 &times; 0.693 = <strong>3.71 W/m&sup2;</strong>. This is the standard "doubling of CO&sub2;" forcing used to define <strong>climate sensitivity</strong>. The key insight is the <strong>logarithmic relationship</strong>: each doubling of CO&sub2; produces the same additional forcing (~3.7 W/m&sup2;). Going from 280&rarr;560 ppm has the same forcing effect as going from 560&rarr;1120 ppm. This occurs because CO&sub2; absorption bands become saturated at the center, and additional CO&sub2; only widens the absorption wings logarithmically.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q65.</span><span class="tag tag-energy">Energy Balance</span> The right panel shows temperature response with and without feedbacks. At 2&times; CO&sub2; (560 ppm), approximately what temperature change does the Planck response give, and what does the feedback-inclusive response give? What feedbacks amplify the warming?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    At 560 ppm, the <strong>Planck response (blue, no feedbacks)</strong> gives approximately <strong>1.0&ndash;1.2&deg;C</strong> of warming. The <strong>feedback-inclusive response (red)</strong> gives approximately <strong>3.0&deg;C</strong>, with an uncertainty range (pink shading) of roughly <strong>2.0&ndash;4.5&deg;C</strong>. This is the <strong>Equilibrium Climate Sensitivity (ECS)</strong>. The feedbacks that amplify the initial Planck response by ~3&times; include: <strong>1. Water vapor feedback (strongest, ~+1.8 W/m&sup2;/K):</strong> Warmer air holds more water vapor (Clausius-Clapeyron), which is itself a greenhouse gas, amplifying warming. <strong>2. Ice-albedo feedback (~+0.3 W/m&sup2;/K):</strong> Warming melts reflective ice/snow, exposing darker ocean/land, reducing albedo, absorbing more solar radiation. <strong>3. Cloud feedbacks (~+0.5 W/m&sup2;/K, highly uncertain):</strong> Changes in cloud cover, altitude, and properties can either amplify or dampen warming &mdash; this is the largest source of uncertainty in ECS. <strong>4. Lapse rate feedback (~&minus;0.6 W/m&sup2;/K):</strong> A negative feedback where tropical upper troposphere warms faster than the surface, increasing OLR efficiency.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q66.</span><span class="tag tag-energy">Energy Balance</span> Why is the radiative forcing relationship logarithmic rather than linear? What does this mean for policy discussions about emissions reduction targets?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The logarithmic relationship arises from the physics of <strong>infrared absorption band saturation</strong>. CO&sub2; absorbs strongly at its primary band centered at 15 &mu;m. At pre-industrial concentrations, the center of this band was already nearly opaque &mdash; adding more CO&sub2; doesn't increase absorption at the center because it's already at 100%. Additional CO&sub2; only increases absorption at the <strong>wings (edges) of the band</strong>, where absorption is weaker. The wing contribution grows logarithmically with concentration. <strong>Policy implications:</strong> On one hand, the logarithmic relationship is "good news" because it means each additional ton of CO&sub2; has a <strong>diminishing marginal forcing effect</strong>. Going from 280&rarr;420 ppm had a larger forcing effect per ppm than going from 420&rarr;560 ppm will. On the other hand, it means that <strong>undoing warming requires removing a proportionally larger fraction of CO&sub2;</strong> than was added. And the temperature feedbacks (right panel) can amplify even modest forcing changes into significant warming, especially in the uncertain upper range.
+  </div></details>
+</div>
+</div>
+
+<!-- IMAGE 21 -->
+<div class="image-group">
+<h3>Image 21 &mdash; Heating/Cooling Rate Models</h3>
+<img src="output/21_heating_cooling_models.png" alt="Heating and Cooling Rate Models: Linear, Piecewise-Linear, and Exponential">
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q67.</span><span class="tag tag-energy">Energy Balance</span> Using the linear model in the left panel, the initial temperature is 15&deg;C in 2000 and the rate is 0.02&deg;C/yr. What is the projected temperature in 2100? In 2150? Write the general equation.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The linear model is <strong>T(t) = T<sub>0</sub> + r&middot;t</strong>, where T<sub>0</sub> = 15&deg;C and r = 0.02&deg;C/yr. Measuring t in years after 2000: <strong>T(2100):</strong> t = 100, so T = 15 + 0.02 &times; 100 = 15 + 2.0 = <strong>17.0&deg;C</strong>. The annotation on the graph confirms T(2100) = 16.5&deg;C, suggesting the model's baseline may be slightly different (T<sub>0</sub> &approx; 14.5&deg;C), but the method is the same. <strong>T(2150):</strong> t = 150, so T = 14.5 + 0.02 &times; 150 = 14.5 + 3.0 = <strong>17.5&deg;C</strong>. The linear model assumes a <strong>constant rate of warming</strong> &mdash; the same &Delta;T every year, regardless of feedbacks, mitigation efforts, or saturation effects. It's the simplest extrapolation and useful as a first approximation, but it doesn't capture accelerating trends or equilibrium behavior. On the graph, you can verify this by noting the curve is a straight line with constant slope.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q68.</span><span class="tag tag-energy">Energy Balance</span> The piecewise-linear model (center panel) shows three segments with rates of 0.015&deg;C/yr, 0.025&deg;C/yr, and 0.035&deg;C/yr. Why might warming rates accelerate over time? Estimate the total temperature increase from 2000 to 2200 if each segment spans roughly 67 years.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    If each segment spans ~67 years: <strong>Segment 1 (2000&ndash;2067):</strong> &Delta;T = 0.015 &times; 67 = <strong>1.0&deg;C</strong>. <strong>Segment 2 (2067&ndash;2134):</strong> &Delta;T = 0.025 &times; 67 = <strong>1.675&deg;C</strong>. <strong>Segment 3 (2134&ndash;2200):</strong> &Delta;T = 0.035 &times; 67 = <strong>2.345&deg;C</strong>. <strong>Total &Delta;T &approx; 5.0&deg;C</strong> over 200 years, reaching ~20&deg;C from 15&deg;C. This matches the graph's trajectory. <br><br><strong>Why rates accelerate:</strong> Several positive feedbacks can cause warming to speed up: <strong>1. Ice-albedo feedback:</strong> As ice melts, darker surfaces absorb more solar radiation, increasing warming. <strong>2. Permafrost thawing:</strong> Releases methane and CO<sub>2</sub>, adding to greenhouse forcing. <strong>3. Rising emissions:</strong> If fossil fuel use increases, more CO<sub>2</sub> is added each year. <strong>4. Water vapor feedback:</strong> Warmer air holds more water vapor (a greenhouse gas), amplifying the initial warming. Compare this to the linear model: by 2200, the piecewise model reaches ~20&deg;C vs. the linear model's ~19&deg;C, because the accelerating rates compound the warming beyond what a constant rate predicts.
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q69.</span><span class="tag tag-physics">Physics</span> The right panel shows an exponential approach to equilibrium with the equation T(t) = T<sub>f</sub> &minus; (T<sub>f</sub> &minus; T<sub>0</sub>)e<sup>&minus;t/&tau;</sup>. Given T<sub>f</sub> = 18&deg;C, T<sub>0</sub> = 15&deg;C, and &tau; = 50 years: (a) What fraction of the total temperature change has occurred after one time constant? (b) After three time constants? (c) What is T at t = 50 years?</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    The equation is T(t) = 18 &minus; (18 &minus; 15)e<sup>&minus;t/50</sup> = 18 &minus; 3e<sup>&minus;t/50</sup>. The total possible change is T<sub>f</sub> &minus; T<sub>0</sub> = 3&deg;C. <br><br><strong>(a) After one &tau; (t = 50 yr):</strong> e<sup>&minus;1</sup> = 0.368, so the remaining gap is 3 &times; 0.368 = 1.10&deg;C. The completed fraction is <strong>1 &minus; e<sup>&minus;1</sup> = 0.632 = 63.2%</strong> of the change. T(50) = 18 &minus; 1.10 = <strong>16.9&deg;C</strong>. The annotation on the graph confirms "63% of change in one &tau;". <br><br><strong>(b) After three &tau; (t = 150 yr):</strong> e<sup>&minus;3</sup> = 0.050, so the completed fraction is <strong>1 &minus; 0.050 = 95.0%</strong>. T(150) = 18 &minus; 3 &times; 0.050 = 18 &minus; 0.15 = <strong>17.85&deg;C</strong> &mdash; nearly at equilibrium. <br><br><strong>(c) T(50) = 16.9&deg;C</strong> as computed above. <br><br>This exponential model is physically motivated: it represents a system approaching a new equilibrium after a forcing change. The <strong>time constant &tau;</strong> reflects the system's thermal inertia &mdash; primarily the ocean's heat capacity. A larger &tau; means slower response. The key "63% rule" (1 &minus; 1/e) is universal for all exponential approaches and appears throughout physics (RC circuits, radioactive decay, Newton's cooling law).
+  </div></details>
+</div>
+
+<div class="question">
+  <p class="prompt"><span class="qnum">Q70.</span><span class="tag tag-climate">Climate Processes</span> Compare all three models. Which is most physically realistic for Earth's climate system responding to a <em>one-time</em> doubling of CO<sub>2</sub>? Which best describes a scenario of continually increasing emissions? Explain your reasoning.</p>
+  <details><summary>Show Answer</summary><div class="answer">
+    <strong>One-time CO<sub>2</sub> doubling &rarr; Exponential approach (right panel).</strong> If CO<sub>2</sub> is doubled instantaneously and then held constant, the climate system has a fixed new equilibrium temperature to approach. The planet's thermal inertia (mostly ocean heat uptake) causes a gradual exponential approach to that equilibrium. The time constant &tau; &approx; 50 years reflects ocean mixing timescales. This is exactly what the exponential model describes: an initial temperature T<sub>0</sub> (old equilibrium at 15&deg;C) approaching a new equilibrium T<sub>f</sub> (18&deg;C) with the characteristic 63%-in-one-&tau; behavior. <br><br><strong>Continually increasing emissions &rarr; Piecewise-linear (center panel).</strong> If emissions keep rising, the forcing grows over time, and the equilibrium temperature the system is "chasing" keeps moving upward. This can produce accelerating warming, as each decade adds more forcing than the last. The piecewise-linear model captures this with progressively steeper slopes (0.015 &rarr; 0.025 &rarr; 0.035&deg;C/yr). <br><br><strong>The linear model (left panel)</strong> is appropriate for a scenario with <strong>constant annual emissions</strong> &mdash; the forcing increases logarithmically with CO<sub>2</sub>, but if emissions are steady, the year-over-year forcing increment is roughly constant, producing approximately linear warming over multi-decade timescales. It's the simplest useful model but cannot capture equilibrium behavior or acceleration. <br><br>In reality, Earth's response combines elements of all three, depending on the emission scenario. The IPCC's Shared Socioeconomic Pathways (SSPs) produce temperature curves that resemble: linear/accelerating under high-emission scenarios (SSP3-8.5), and exponential plateau under strong-mitigation scenarios (SSP1-2.6).
+  </div></details>
+</div>
+</div>
+
+<footer style="text-align:center; padding:2rem 0 3rem; color:#888; font-size:0.9rem; border-top:1px solid #333; margin-top:2rem;">
+  Science Olympiad Division C 2026 &mdash; Remote Sensing Practice Quiz &mdash; 70 Questions &bull; 21 Images<br>
+  Theme: Climate Change &amp; Earth Observation
+</footer>
+
+</body>
+</html>
